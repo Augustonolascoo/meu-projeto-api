@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Usuários</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#all-users" onclick="showSection('all-users')">Todos</a></li>
+                <li><a href="#delete-user" onclick="showSection('delete-user')">Deletar</a></li>
+                <li><a href="#edit-user" onclick="showSection('edit-user')">Editar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="all-users" class="hidden">
+            <h2>Todos os Usuários</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="user-table-body">
+                    <!-- As linhas da tabela serão inseridas aqui pelo JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="delete-user" class="hidden">
+            <h2>Deletar Usuário</h2>
+            <form id="deleteUserForm">
+                <label for="deleteUserId">ID do Usuário:</label>
+                <input type="number" id="deleteUserId" name="userId" required>
+                <button type="submit">Deletar</button>
+            </form>
+        </section>
+
+        <section id="edit-user" class="hidden">
+            <h2>Editar Usuário</h2>
+            <form id="editUserForm">
+                <input type="hidden" id="editUserId" name="userId">
+                <label for="editName">Nome:</label>
+                <input type="text" id="editName" name="name" required>
+                <label for="editEmail">Email:</label>
+                <input type="email" id="editEmail" name="email" required>
+                <button type="submit">Atualizar</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
